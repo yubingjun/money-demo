@@ -1,15 +1,16 @@
 <template>
   <div class="nav-wrapper">
     <div class="content">
-      <p>Labels.vue</p>
+      <slot></slot>
     </div>
     <Nav/>
   </div>
+
 </template>
 
 <script lang="ts">
 export default {
-name: "Labels",
+name: "Layout"
 }
 </script>
 
