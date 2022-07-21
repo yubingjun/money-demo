@@ -13,5 +13,11 @@ body {
   line-height: 1.5;
   font-family: $font-hei;
   color: #333;
+  font-size:16px;
+}
+.clearfix::after{
+  content:'';
+  display: block;
+  clear: both;
 }
 </style>
