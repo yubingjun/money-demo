@@ -26,7 +26,7 @@
 
   @Component
   export default class NumberPad extends Vue {
-    output = '';
+    output = '0';
 
     inputContent(event:MouseEvent) {
       const button = (event.target as HTMLButtonElement);
@@ -54,7 +54,9 @@
     clear() {
       this.output = '0';
     }
-    ok() {return}
+    ok() {
+      this.$emit('update:value',this.output);
+    }
 }
 </script>
 
