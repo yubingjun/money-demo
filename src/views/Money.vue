@@ -7,7 +7,6 @@
                 placeholder="在这里输入备注"
                 @update:value="onUpdateNotes"/>
     </div>
-
     <Tags/>
   </Layout>
 </template>
