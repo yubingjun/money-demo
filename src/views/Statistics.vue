@@ -13,22 +13,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-  ::v-deep .type-tabs-item {
-  background: white;
-
-    &.selected {
-    background: #c4c4c4;
-
-      &::after {
-      display: none;
-    }
-  }
-}
-  ::v-deep .interval-tabs-item {
-    height: 48px;
-  }
-</style>
 
 <script lang="ts">
 import Vue from 'vue';
@@ -49,3 +33,43 @@ export default class Statistics extends Vue {
 
 }
 </script>
+
+<style lang="scss" scoped>
+::v-deep {
+  .type-tabs-item {
+    background: #c4c4c4;
+    &.selected {
+      background: white;
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .interval-tabs-item {
+    height: 48px;
+  }
+}
+%item {
+  padding: 8px 16px;
+  line-height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.title {
+  @extend %item;
+}
+
+.record {
+  background: white;
+  @extend %item;
+}
+.notes {
+  margin-right: auto;
+  margin-left: 16px;
+  color: #999;
+}
+
+</style>
