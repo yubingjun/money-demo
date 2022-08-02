@@ -3,7 +3,7 @@
     <Tabs class-prefix="type" :data-source="recordTypeList" :value.sync="type"/>
     <ol v-if="groupedList.length > 0">
       <li v-for="(group, index) in groupedList" :key="index">
-        <h3 class="title">{{ beautify(group.title) }} <span>{{group.total}}￥</span></h3>
+        <h3 class="title">{{ beautify(group.title) }} <span>总计：{{group.total}}￥</span></h3>
         <ol>
           <li v-for="item in group.items" :key="item.id"
               class="record">
@@ -15,10 +15,12 @@
       </li>
     </ol>
     <div v-else class="noResult">
-      目前没有相关记录
+      你还没有任何记录哟~ 快去记一笔吧
+      <span style="display: block"><Icon name="null"/></span>
     </div>
   </Layout>
-</template>
+  </template>
+
 
 
 <script lang="ts">
@@ -92,10 +94,6 @@ export default class Statistics extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.noResult {
-  padding: 16px;
-  text-align: center;
-}
 ::v-deep {
   .type-tabs-item {
     background: #c4c4c4;
@@ -131,6 +129,14 @@ export default class Statistics extends Vue {
   margin-right: auto;
   margin-left: 16px;
   color: #999;
+}
+.noResult {
+  padding: 16px;
+  text-align: center;
+  .icon {
+    width: 128px;
+    height: 128px;
+  }
 }
 
 </style>
